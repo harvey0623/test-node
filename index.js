@@ -10,6 +10,8 @@ const dotenv = require('dotenv').config({
    path: '.env.dev'
 });
 
+const knn = require('./route/knn/index.js')
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ limit: '5mb' }));
 app.use(cookieParser());
@@ -20,6 +22,7 @@ app.set('views', './views');
 app.set('view engine', 'html');
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use('/knn', knn)
 
 app.get('/echo', (req, res) => {
    res.json({
