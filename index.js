@@ -21,6 +21,13 @@ app.set('view engine', 'html');
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
+app.get('/echo', (req, res) => {
+   res.json({
+      status: true,
+      name: 'harvey',
+      gender: 'male'
+   })
+})
 
 app.use((req, res) => {
    res.write('<h1>Hello mock server ~</h1>');
