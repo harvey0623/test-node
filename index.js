@@ -28,7 +28,8 @@ app.get('/echo', (req, res) => {
    res.json({
       status: true,
       name: 'harvey',
-      gender: 'male'
+      gender: 'male',
+      age: 100
    })
 })
 
