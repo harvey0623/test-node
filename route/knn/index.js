@@ -1,5 +1,14 @@
 const express = require("express");
 const router = express.Router();
+const axios = require('axios')
+
+router.get('/user', async(req, res) => {
+  let result = await axios({
+    url: 'https://randomuser.me/api/',
+    method: 'get'
+  })
+  res.json({ data: result.data })
+})
 
 router.get("/banner", async (req, res) => {
   res.json({
