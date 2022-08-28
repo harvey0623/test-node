@@ -24,6 +24,11 @@ app.set('view engine', 'html');
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use('/knn', knn)
 
+app.get('/env', (req, res) => {
+   let text = process.env.TEST_TEXT
+   res.json({ text, payload: process.env })
+})
+
 app.get('/echo', (req, res) => {
    res.json({
       status: true,
