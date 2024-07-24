@@ -1,1 +1,3 @@
-csdcsdcsdcsd
+(() => {
+  console.log('aaa')
+})
